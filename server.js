@@ -1,19 +1,23 @@
 import express from 'express';
-import mongoose from 'mongoose';
+import connectDB from './config/db.js';
 import dotenv from 'dotenv';
-dotenv.config({ path: './.env' });
+dotenv.config({ path: './config/.env' });
 const app = express();
 
-// Server Setup
-const PORT = 3333;
-/* connecting mongodb using atlas cloud */  
-mongoose.connect('mongodb+srv://admin:admin@crudnodejs.ydtzqky.mongodb.net/URL-Shortener?retryWrites=true&w=majority')
-.then(() => {
-  console.log('MongoDB is Already Connected!');
+connectDB();
 
+import indexRouter from './routes/index.js';
+import urlsRouter from './routes/urls.js';
+
+// Body Parser
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use('/', indexRouter);
+app.use('/api', urlsRouter);
+
+// Server Setup
+const PORT = process.env.PORT || 3333;
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
-});
-}).catch((error) => { 
-  console.log(error); 
+  console.log(`Server is running at PORT ${PORT}`);
 });
