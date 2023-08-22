@@ -25,7 +25,11 @@ Start the Server
 npm run start
 ```
 
-
-
-
+### Technologies and Techstack:
+- Visual Studio Code
+- Postman for API
+- Javascript
+- Nodejs
+- Express
+- MongoDB
 
