@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "56787b76-6b59-4a78-8563-1afdada93ce3",
+		"name": "URL-Shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27884044"
+	},
+	"item": [
+		{
+			"name": "url-ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/zaJovrjGO5ny_A7nd7rDc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"zaJovrjGO5ny_A7nd7rDc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "short-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"origUrl\": \"https://github.com/dangrishh\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/api/short",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"api",
+						"short"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
